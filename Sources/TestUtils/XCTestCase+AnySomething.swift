@@ -11,8 +11,8 @@ public func anyNSError() -> NSError {
     NSError(domain: "any error", code: 0)
 }
 
-public func anyHTTPURLResponse() -> HTTPURLResponse {
-    HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
+public func anyHTTPURLResponse(statusCode: Int = 200, headerFields: [String: String]? = nil) -> HTTPURLResponse {
+    HTTPURLResponse(url: anyURL(), statusCode: statusCode, httpVersion: nil, headerFields: headerFields)!
 }
 
 public func nonHTTPURLResponse() -> URLResponse {
